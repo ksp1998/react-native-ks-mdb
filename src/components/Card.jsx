@@ -1,10 +1,10 @@
 import { useSelector } from "react-redux";
-import { RatingProgress } from ".";
+import RatingProgress from "./RatingProgress";
 import { Pressable, Text, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { Image } from "expo-image";
 
-const Card = ({ record, mediaType }) => {
+const Card = ({ record, mediaType, fitToScreen = false }) => {
   const navigation = useNavigation();
   const { genres, conf } = useSelector((state) => state.tmdb);
   const rating = Number(record?.vote_average);
@@ -16,10 +16,10 @@ const Card = ({ record, mediaType }) => {
     : "";
 
   return (
-    <View className="w-[35vw] border mx-1">
+    <View className={`m-[1vw] ${fitToScreen ? "w-[30vw]" : "w-[35vw]"}`}>
       <Pressable
         onPress={() => {
-          navigation.navigate("Details", {
+          navigation.navsigate("Details", {
             mediaType:
               record?.media_type ||
               mediaType ||
@@ -41,7 +41,7 @@ const Card = ({ record, mediaType }) => {
           </View>
         </View>
 
-        <View className="-translate-y-[20px] flex flex-col gap-2">
+        <View className="-translate-y-[8px] flex flex-col gap-2">
           <Text className="text-white text-lg font-bold line-clamp-1 text-ellipsis">
             {record?.title || record?.name || (
               <Text className="min-h-7 bg-gray-800 rounded-lg animate-pulse"></Text>

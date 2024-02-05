@@ -1,6 +1,6 @@
 import { FlatList, Text, View } from "react-native";
 import { useAxios } from "../utlils/hooks";
-import { Card, ScrollContainer } from ".";
+import Card from "./Card";
 
 const CardsContainerRow = ({ endpoint, title }) => {
   const { data, error } = useAxios(endpoint);

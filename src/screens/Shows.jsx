@@ -1,13 +1,7 @@
-import { Text, ScrollView } from "react-native";
+import { Explore } from "../components";
 
 const Shows = () => {
-  return (
-    <ScrollView style={{ backgroundColor: "#020617" }}>
-      <Text className="py-12 flex items-center text-white text-center text-4xl">
-        Shows Screen
-      </Text>
-    </ScrollView>
-  );
+  return <Explore heading="Explore Shows" mediaType="tv" />;
 };
 
 export default Shows;
