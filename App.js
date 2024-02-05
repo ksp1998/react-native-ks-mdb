@@ -3,6 +3,9 @@ import { Header } from "./src/components";
 import { Home, Movies, Search, Shows } from "./src/screens";
 import { NavigationContainer } from "@react-navigation/native";
 import { Image } from "expo-image";
+import store from "./src/store";
+import { Provider } from "react-redux";
+import { StatusBar } from "react-native";
 
 export const screens = [
   {
@@ -39,8 +42,9 @@ const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
-    <>
+    <Provider store={store}>
       <NavigationContainer>
+        <StatusBar barStyle="light-content" backgroundColor="#020716" />
         <Header />
         <Tab.Navigator
           backgroundColor="red"
@@ -69,6 +73,6 @@ export default function App() {
           <Tab.Screen name="Search" component={Search} />
         </Tab.Navigator>
       </NavigationContainer>
-    </>
+    </Provider>
   );
 }

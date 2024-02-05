@@ -1,5 +1,7 @@
-import { ScrollView, Text } from "react-native";
+import { ScrollView } from "react-native";
 import { TMDB_API_BASE_URL } from "../utlils";
+import { Hero } from "../components";
+import { CardsContainerRow } from "../components";
 
 const sections = [
   {
@@ -43,9 +45,14 @@ const sections = [
 const Home = () => {
   return (
     <ScrollView style={{ backgroundColor: "#020617" }}>
-      <Text className="py-12 flex items-center text-white text-center text-4xl">
-        Home Screen
-      </Text>
+      <Hero />
+      {sections.map((section, i) => (
+        <CardsContainerRow
+          key={i}
+          title={section.title}
+          endpoint={section.endpoint}
+        />
+      ))}
     </ScrollView>
   );
 };
