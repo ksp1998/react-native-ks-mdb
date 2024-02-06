@@ -14,11 +14,6 @@ const CardsContainerRow = ({ endpoint, title }) => {
         renderItem={({ item: record }) => <Card record={record} />}
         keyExtractor={(record, index) => record?.id || index}
       />
-      {/* <ScrollContainer horizontal={true}>
-        {(data?.results || Array(20).fill(null))?.map((record, index) => (
-          <Card key={record?.id || index} record={record} />
-        ))}
-      </ScrollContainer> */}
       <Text className="text-red-500">{error}</Text>
     </View>
   );

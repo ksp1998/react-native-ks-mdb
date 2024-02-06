@@ -19,7 +19,7 @@ const Card = ({ record, mediaType, fitToScreen = false }) => {
     <View className={`m-[1vw] ${fitToScreen ? "w-[30vw]" : "w-[35vw]"}`}>
       <Pressable
         onPress={() => {
-          navigation.navsigate("Details", {
+          navigation.navigate("Details", {
             mediaType:
               record?.media_type ||
               mediaType ||

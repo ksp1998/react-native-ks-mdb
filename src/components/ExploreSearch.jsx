@@ -10,9 +10,6 @@ const ExploreSearch = () => {
 
   const fetchData = useCallback(
     (pg = page) => {
-      console.log(
-        `${TMDB_API_BASE_URL}/search/multi?query=${search}&page=${pg}`
-      );
       fetchRecordFromApi(
         `${TMDB_API_BASE_URL}/search/multi?query=${search}&page=${pg}`
       )

@@ -1,4 +1,4 @@
-import { Explore } from "../components";
+import Explore from "../components/Explore";
 
 const Shows = () => {
   return <Explore heading="Explore Shows" mediaType="tv" />;

@@ -1,7 +1,7 @@
 import { ScrollView } from "react-native";
 import { TMDB_API_BASE_URL } from "../utlils";
-import { Hero } from "../components";
-import { CardsContainerRow } from "../components";
+import Hero from "../components/Hero";
+import CardsContainerRow from "../components/CardsContainerRow";
 
 const sections = [
   {

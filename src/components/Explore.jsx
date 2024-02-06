@@ -37,7 +37,6 @@ const Explore = ({ heading, mediaType }) => {
 
   const fetchData = useCallback(
     (pg = page) => {
-      console.log(`${TMDB_API_BASE_URL}/discover/${mediaType}?page=${pg}`);
       fetchRecordFromApi(
         `${TMDB_API_BASE_URL}/discover/${mediaType}?page=${pg}`,
         getOptions()
@@ -125,19 +124,3 @@ const Explore = ({ heading, mediaType }) => {
 };
 
 export default Explore;
-
-{
-  /* <InfiniteScroll
-  className="content"
-  dataLength={data?.results?.length || []}
-  next={fetchData}
-  hasMore={page <= data?.total_pages}
-  loader={<Spinner />}
->
-  <View className="flex gap-2 flex-wrap justify-center gap-y-8 lg:mr-4">
-    {data?.results?.map((item, index) => (
-      <Card key={item.id || index} record={item} mediaType={mediaType} />
-    ))}
-  </View>
-</InfiniteScroll> */
-}
